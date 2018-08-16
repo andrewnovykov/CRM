@@ -1,0 +1,27 @@
+{
+  "name": "crm",
+  "version": "1.0.0",
+  "description": "fullstack app with Angular and Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/papapin/CRM.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Andrew Novykov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/papapin/CRM/issues"
+  },
+  "homepage": "https://github.com/papapin/CRM#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
