@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const positionShema = new Shema({
+const positionSchema = new Schema({
   name: {
     type: String,
     require: true
@@ -12,7 +12,7 @@ const positionShema = new Shema({
     require: true
   },
   user: {
-    ref: 'users',
+    ref: "users",
     type: Schema.Types.ObjectId
   },
   category: {
@@ -21,4 +21,4 @@ const positionShema = new Shema({
   }
 });
 
-module.exports = mongoose.model("positions", positionShema);
+module.exports = mongoose.model("positions", positionSchema);
