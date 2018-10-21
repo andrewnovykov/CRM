@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const orderShema = new Shema({
+const orderSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
@@ -30,4 +30,4 @@ const orderShema = new Shema({
   ]
 });
 
-module.exports = mongoose.model("orders", orderShema);
+module.exports = mongoose.model("orders", orderSchema);
