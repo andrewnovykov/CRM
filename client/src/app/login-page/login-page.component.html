@@ -1,18 +1,47 @@
 <div class="auth-block">
-  <div class="card">
+  <form
+
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  class="card">
     <div class="card-content">
       <span class="card-title">Sing in</span>
       <div class="input-field">
-        <input id="email" type="email" required>
+        <input
+         id="email"
+          type="email"
+          formControlName="email"
+          [ngClass]="{'invalid': form.get('email').invalid && form.get('email').touched }"
+           >
         <label for="email">Email:</label>
+        <span
+        *ngIf="form.get('email').invalid && form.get('email').touched"
+        class="helper-text red-text">
+            <span *ngIf="form.get('email').errors['required']">The field for email cannot be empty</span>
+            <span *ngIf="form.get('email').errors['email']">email is not correct</span>
+        </span>
       </div>
       <div class="input-field">
-        <input id="password" type="password" required>
+        <input id="password"
+        [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched }"
+         type="password"
+          formControlName="password">
         <label for="password">Password:</label>
+        <span *ngIf="form.get('password').invalid && form.get('password').touched" class="helper-text red-text">
+          <span *ngIf="form.get('password').errors['required']">The field for password cannot be empty</span>
+          <span *ngIf="form.get('password').errors['minlength'] && form.get('password').errors['minlength']['requiredlength']">
+            password is not correct
+            {{form.get('password').errors['minlength']['requiredlength']}}
+          </span>
+        </span>
       </div>
     </div>
     <div class="card-action">
-      <button class="modal-action btn waves-effect">GO</button>
+      <button
+       type="submit"
+      class="modal-action btn waves-effect"
+      [disabled]="form.invalid"
+      >GO</button>
     </div>
-  </div>
+  </form>
 </div>
